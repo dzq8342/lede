@@ -96,11 +96,11 @@ jobs:
           # 无论你想要对固件进行怎样的定制, 都需要且只需要修改 EOF 回环内的内容.
           # 
 
-          # 编译x64固件:
+          # 编译PI:
             cat >> .config <<EOF
-            CONFIG_TARGET_brcm47xx=y
-            CONFIG_TARGET_brcm47xx_generic=y
-            CONFIG_TARGET_MULTI_PROFILE=y
+            CONFIG_TARGET_sunxi=y
+            CONFIG_TARGET_sunxi_cortexa53=y
+            CONFIG_TARGET_sunxi_cortexa53_DEVICE_sun50i-h5-nanopi-neo2=y
             EOF
 
           # 固件压缩:
@@ -150,6 +150,7 @@ jobs:
           # CONFIG_PACKAGE_luci-app-openvpn=y
           # CONFIG_PACKAGE_luci-app-openvpn-server=y
           # CONFIG_PACKAGE_luci-app-qbittorrent=y
+          CONFIG_PACKAGE_luci-app-ssr-plus=y
           # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server=y
